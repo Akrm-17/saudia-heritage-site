@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saudi Heritage - Intangible Heritage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+     .main-content {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .page-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .page-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            animation: fadeInDown 1s both;
+        }
+        
+        .page-title h2::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background-color: var(--accent);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: lineGrow 1s 0.5s forwards;
+        }
+        
+        .heritage-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        .heritage-item {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s 0.3s forwards;
+        }
+        
+        .heritage-media {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .heritage-image {
+            width: 100%;
+            max-width: 500px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            transition: transform 0.5s;
+        }
+        
+        .heritage-image:hover {
+            transform: scale(1.03);
+        }
+        
+        .heritage-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.8s;
+        }
+        
+        .heritage-image:hover img {
+            transform: scale(1.1);
+        }
+        
+    
+        .heritage-info {
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .heritage-info h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 1.8rem;
+            transition: color 0.3s;
+        }
+        
+        .heritage-item:hover .heritage-info h3 {
+            color: var(--accent);
+        }
+        
+        .heritage-info p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            animation: fadeIn 1s both;
+        }
+        
+        .fire-text {
+            font-size: 2.5rem;
+            color: #ff4500;
+            text-align: center;
+            text-shadow: 
+                0 0 4px #fff,
+                0 -5px 4px #ff3,
+                2px -10px 6px #fd0,
+                -2px -15px 11px #f80,
+                2px -25px 18px #f20;
+            margin: 2rem 0;
+            animation: 
+                flicker 1.5s infinite alternate,
+                pulse 2s infinite;
+        }
+        
+</style>
+<body>
+    <header>
+        <h1>Saudi Heritage</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="heritage-sites.html">Heritage Sites</a></li>
+            <li><a href="intangible-heritage.html">Intangible Heritage</a></li>
+            <li><a href="discoveries.html">Recent Discoveries</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Media Gallery</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    
+    <div class="main-content">
+        <div class="page-title">
+            <h2 class="fire-text">Intangible Heritage Elements</h2>
+        </div>
+        
+        <div class="heritage-container">
+            <div class="heritage-item">
+                <div class="heritage-media">
+                    
+                    <div class="heritage-video">
+                        <video controls poster="assets/images/video-poster.jpg">
+                            <source src="assets/videos/falconry.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                
+                <div class="heritage-info">
+                    <h3>Arabic Coffee and Falconry</h3>
+                    <p>Arabic coffee is considered a symbol of generosity and hospitality in Saudi culture, and was included in UNESCO's list of intangible cultural heritage in 2015.</p>
+                    <p>Falconry has also been registered as a living human heritage, practiced in the Kingdom for centuries and considered an authentic part of Bedouin heritage.</p>
+                    <p>Other intangible elements include Najdi Ardah dance, Asiri Cat art, Hijazi Mizmar, and other folk arts.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Saudi Heritage Commission - All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Smooth hover effect for navigation
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                link.style.transform = 'translateY(-3px)';
+                link.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
+            });
+            link.addEventListener('mouseleave', () => {
+                link.style.transform = '';
+                link.style.boxShadow = '';
+            });
+        });
+        
+        // Video play/pause on hover
+        const video = document.querySelector('video');
+        const videoContainer = document.querySelector('.heritage-video');
+        
+        videoContainer.addEventListener('mouseenter', () => {
+            video.play();
+        });
+        
+        videoContainer.addEventListener('mouseleave', () => {
+            video.pause();
+        });
+    </script>
+</body>
+</html>

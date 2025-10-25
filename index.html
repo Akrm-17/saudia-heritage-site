@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saudi Heritage - Preserving Cultural Treasures</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <button class="toggle-btn" id="themeToggle">🌙 Night Mode</button>
+
+    <!-- Header -->
+    <header>
+        <h1>Saudi Heritage Commission</h1>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="heritage-sites.html">Heritage Sites</a></li>
+            <li><a href="intangible-heritage.html">Intangible Heritage</a></li>
+            <li><a href="discoveries.html">Recent Discoveries</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Media Gallery</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Cinematic Banner -->
+    <div class="banner">
+        <h1>Saudi Heritage Through the Ages</h1>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Intro Section with Text Effects -->
+        <div class="intro">
+            <h2 class="gradient-textt">Saudi Heritage Commission</h2>
+            <h3 class="text-reflection" data-text="Preserving Our Legacy">Preserving Our Legacy</h3>
+            <p class="flaming-text">Explore centuries of cultural treasures</p>
+        </div>
+
+        <!-- Featured Sites Grid -->
+        <div class="featured-sites">
+            <!-- Site Card 1 -->
+            <div class="site-card">
+                <div class="site-image">
+                    <img class="zoom-img" src="assets/images/site1.jpg" alt="Al-Faw Archaeological Site">
+                </div>
+                <div class="site-card-content">
+                    <h3>Al-Faw Archaeological Site</h3>
+                    <p>The capital of the first Kindah kingdom and one of the most important archaeological sites in the Arabian Peninsula. Discover the rich history of ancient Arabia.</p>
+                    <a href="heritage-sites.html" class="learn-more">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Site Card 2 -->
+            <div class="site-card">
+                <div class="site-image">
+                    <img class="zoom-img" src="assets/images/site2.jpg" alt="At-Turaif District in Diriyah">
+                </div>
+                <div class="site-card-content">
+                    <h3>At-Turaif District</h3>
+                    <p>The heart of the first Saudi state and a UNESCO World Heritage Site. Experience the architectural grandeur of this historic district.</p>
+                    <a href="heritage-sites.html" class="learn-more">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Site Card 3 -->
+            <div class="site-card">
+                <div class="site-image">
+                    <img class="zoom-img" src="assets/images/site3.jpg" alt="Rock Inscriptions">
+                </div>
+                <div class="site-card-content">
+                    <h3>Ancient Rock Art</h3>
+                    <p>Thousands of rock inscriptions documenting the history of ancient Arabian civilizations. Witness the artistic legacy of our ancestors.</p>
+                    <a href="heritage-sites.html" class="learn-more">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Text Effects Section -->
+        <div class="intro" style="margin-top: 4rem;">
+            <h2 class="elegant-skew">Discover Our Heritage</h2>
+            <p style="font-size: 1.1rem; color: #555; margin-top: 1rem;">
+                Immerse yourself in the rich tapestry of Saudi Arabian culture, history, and traditions. 
+                From ancient archaeological sites to contemporary cultural expressions, our heritage 
+                represents thousands of years of civilization and human achievement.
+            </p>
+        </div>
+    </div>
+
+    <!-- Floating Icon -->
+    <div class="floating-icon">🏺</div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Saudi Heritage Commission - All Rights Reserved</p>
+    </footer>
+
+    <!-- Theme Toggle Script (CSS-only compatible) -->
+    <script>
+        // Day/Night Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            body.classList.add('night-mode');
+            themeToggle.textContent = '☀️ Day Mode';
+        }
+
+        themeToggle.addEventListener('click', function() {
+            body.classList.toggle('night-mode');
+            const theme = body.classList.contains('night-mode') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+            themeToggle.textContent = theme === 'dark' ? '☀️ Day Mode' : '🌙 Night Mode';
+        });
+    </script>
+</body>
+</html>
+

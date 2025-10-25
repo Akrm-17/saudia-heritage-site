@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saudi Heritage - Media Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+ 
+</style>
+<body>
+    <header>
+        <h1>Saudi Heritage</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="heritage-sites.html">Heritage Sites</a></li>
+            <li><a href="intangible-heritage.html">Intangible Heritage</a></li>
+            <li><a href="discoveries.html">Recent Discoveries</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Media Gallery</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    
+    <div class="main-content">
+        <div class="page-title">
+            <h2>Heritage Media Gallery</h2>
+        </div>
+        
+        <div class="gallery-container">
+            <div class="gallery-item day-night">
+                <img src="assets/images/gallery1.jpg" alt="Saudi archaeological coins">
+                <div class="gallery-caption">
+                    <h3>Archaeological Coins</h3>
+                    <p>Coins from different periods of Arabian Peninsula history</p>
+                </div>
+            </div>
+            
+            <div class="gallery-item day-night">
+                <img src="assets/images/gallery2.jpg" alt="Historical pottery">
+                <div class="gallery-caption">
+                    <h3>Historical Pottery</h3>
+                    <p>Pottery pieces from various civilizations that lived in the region</p>
+                </div>
+            </div>
+            
+            <div class="gallery-item day-night">
+                <img src="assets/images/gallery3.jpg" alt="Jarsh Islamic inscription">
+                <div class="gallery-caption">
+                    <h3>Jarsh Islamic Inscription</h3>
+                    <p>Islamic inscriptions dating back to early Islamic periods</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Saudi Heritage Commission - All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling effect
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Gallery item appearance
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        galleryItems.forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+           
+        });
+        
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                galleryItems.forEach(item => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                });
+            }, 300);
+        });
+    </script>
+</body>
+</html>

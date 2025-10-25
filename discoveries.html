@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saudi Heritage - Recent Discoveries</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+     
+       
+</style>
+<body>
+    <header>
+        <h1>Saudi Heritage</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="heritage-sites.html">Heritage Sites</a></li>
+            <li><a href="intangible-heritage.html">Intangible Heritage</a></li>
+            <li><a href="discoveries.html">Recent Discoveries</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Media Gallery</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    
+    <div class="main-content">
+        <div class="page-title">
+            <h2>Recent Archaeological Discoveries</h2>
+        </div>
+        
+        <div class="discovery-container">
+            <div class="discovery-item">
+                <div class="discovery-media">
+                    <div class="morph-container" id="morphContainer">
+                        <img src="assets/images/discovery1.jpg" alt="Umm Jirsan Cave" class="morph-image" id="image1">
+                        <img src="assets/images/site3.jpg" alt="Rock Inscriptions" class="morph-image" id="image2" style="opacity: 0;">
+                    </div>
+                    
+                    <div class="audio-player">
+                        <audio controls>
+                            <source src="assets/audio/audio.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p style="text-align: center; margin-top: 0.5rem; font-size: 0.9rem;">Audio report about the discovery</p>
+                    </div>
+                </div>
+                
+                <div class="discovery-info">
+                    <h3>Umm Jirsan Cave</h3>
+                    <p>Umm Jirsan Cave is considered one of the most important recent archaeological discoveries in the Kingdom, located in the volcanic lava fields north of Medina.</p>
+                    
+                    <div class="discovery-highlight">
+                        The cave extends more than 1.5 kilometers and contains large quantities of human and animal bones dating back thousands of years, making it one of the largest mass graves in the Middle East.
+                    </div>
+                    
+                    <p>Preliminary studies indicate that the site dates back to the Neolithic period and was used as a mass grave for several centuries.</p>
+                    
+                    <p>This discovery provides new insights into the history of human settlement in the Arabian Peninsula and patterns of life in ancient times. The findings include:</p>
+                    
+                    <ul style="margin: 1rem 0 1rem 2rem;">
+                        <li>Human remains showing burial patterns</li>
+                        <li>Animal bones indicating domestication practices</li>
+                        <li>Stone tools from different prehistoric periods</li>
+                        <li>Evidence of early human adaptation to arid environments</li>
+                    </ul>
+                    <p>The discovery was made by a joint Saudi-international archaeological team and has been published in several international scientific journals, shedding new light on the prehistory of the Arabian Peninsula.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Saudi Heritage Commission - All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling effect for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Image morphing effect
+        const morphContainer = document.getElementById('morphContainer');
+        const image1 = document.getElementById('image1');
+        const image2 = document.getElementById('image2');
+        let currentImage = 1;
+        
+        function morphImages() {
+            if (currentImage === 1) {
+                image1.style.opacity = '0';
+                image2.style.opacity = '1';
+                currentImage = 2;
+            } else {
+                image1.style.opacity = '1';
+                image2.style.opacity = '0';
+                currentImage = 1;
+            }
+        }
+        
+        // Change images every 5 seconds
+        setInterval(morphImages, 5000);
+        
+        // Page load animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const discoveryItem = document.querySelector('.discovery-item');
+            discoveryItem.style.opacity = '0';
+            discoveryItem.style.transform = 'translateY(20px)';
+            discoveryItem.style.transition = 'opacity 0.8s, transform 0.8s';
+            
+            setTimeout(() => {
+                discoveryItem.style.opacity = '1';
+                discoveryItem.style.transform = 'translateY(0)';
+            }, 300);
+        });
+        
+        // Audio player enhancement
+        const audioPlayer = document.querySelector('audio');
+        audioPlayer.addEventListener('play', function() {
+            this.style.boxShadow = '0 0 10px rgba(139, 69, 19, 0.5)';
+        });
+        
+        audioPlayer.addEventListener('pause', function() {
+            this.style.boxShadow = 'none';
+        });
+    </script>
+</body>
+</html>

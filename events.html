@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saudi Heritage - Events</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+     
+</style>
+<body>
+    <header>
+        <h1>Saudi Heritage</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="heritage-sites.html">Heritage Sites</a></li>
+            <li><a href="intangible-heritage.html">Intangible Heritage</a></li>
+            <li><a href="discoveries.html">Recent Discoveries</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Media Gallery</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    
+    <div class="main-content">
+        <div class="page-title">
+            <h2>Heritage Events and Initiatives</h2>
+        </div>
+        
+        <div class="video-background">
+            <video autoplay muted loop>
+                <source src="assets/videos/falconry.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay">
+                <h3>Our Heritage, Our Identity</h3>
+            </div>
+        </div>
+        
+        <div class="events-container">
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="assets/images/event1.jpg" alt="Janadriyah Festival">
+                </div>
+                <div class="event-info">
+                    <h3>Janadriyah Festival</h3>
+                    <p>The largest heritage and cultural event in the Kingdom, held annually showcasing Saudi regional heritage through folk performances and traditional markets.</p>
+                </div>
+            </div>
+            
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="assets/images/site2.jpg" alt="Custodian of the Two Holy Mosques Heritage Care Program">
+                </div>
+                <div class="event-info">
+                    <h3>Heritage Care Program</h3>
+                    <p>A national initiative to maintain and rehabilitate heritage sites, focusing on UNESCO-listed sites.</p>
+                </div>
+            </div>
+            
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="assets/images/intangible1.jpg" alt="Intangible Heritage Festivals">
+                </div>
+                <div class="event-info">
+                    <h3>Intangible Heritage Festivals</h3>
+                    <p>A series of events aimed at reviving heritage arts and practices and passing them to new generations.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Saudi Heritage Commission - All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling effect
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Staggered item appearance
+        const eventCards = document.querySelectorAll('.event-card');
+        eventCards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+           
+        });
+        
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                eventCards.forEach(card => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                });
+            }, 300);
+        });
+    </script>
+</body>
+</html>
