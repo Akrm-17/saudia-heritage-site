@@ -1532,3 +1532,65 @@ table tbody tr:last-child td {
             font-style: italic;
         }
         
+/* ============================================
+   MOBILE FIXES - إصلاحات الجوال
+   ============================================ */
+
+@media (max-width: 768px) {
+    /* تحسين شريط التنقل */
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    nav a {
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+        margin: 0.2rem 0;
+    }
+    
+    /* تحسين الصور */
+    img, .site-image img, .gallery-item img, .event-image img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* تحسين الـ Banner */
+    .banner {
+        height: 40vh;
+        min-height: 300px;
+    }
+    
+    .banner h1 {
+        font-size: 2rem;
+        padding: 1rem;
+        word-break: break-word;
+    }
+    
+    /* تحسين الـ Grid */
+    .featured-sites,
+    .sites-container,
+    .gallery-container,
+    .events-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* تحسينات إضافية للشاشات الصغيرة جداً */
+@media (max-width: 360px) {
+    .main-content {
+        padding: 1rem;
+    }
+    
+    .site-card-content,
+    .event-info,
+    .discovery-item {
+        padding: 1rem;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+}
