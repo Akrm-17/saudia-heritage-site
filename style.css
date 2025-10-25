@@ -91,27 +91,63 @@ header h1 {
 /* ============================================
    NAVIGATION STYLING
    ============================================ */
+/* ============================================
+   HAMBURGER NAVIGATION STYLING
+   ============================================ */
 
 nav {
     background: linear-gradient(to right, var(--deep-blue), var(--bronze));
-    padding: 1.2rem;
-    position: sticky;
+    padding: 1rem;
+    position: fixed;
     top: 0;
-    z-index: 100;
+    width: 100%;
+    z-index: 1000;
     box-shadow: 0 4px 15px var(--shadow-lg);
 }
 
-nav ul {
+.nav-container {
     display: flex;
-    justify-content: center;
-    list-style: none;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-nav a {
+.nav-logo {
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Hamburger Button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--white);
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+/* Desktop Navigation Menu */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
     color: var(--white);
     text-decoration: none;
     font-weight: 600;
@@ -119,32 +155,87 @@ nav a {
     border-radius: 25px;
     transition: all 0.3s ease;
     position: relative;
-    overflow: hidden;
-    display: block;
 }
 
-nav a::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
+.nav-menu a:hover {
     background: var(--gold);
-    z-index: -1;
-    transition: left 0.3s ease;
-}
-
-nav a:hover {
     color: var(--deep-blue);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+    transform: translateY(-2px);
 }
 
-nav a:hover::before {
-    left: 0;
+/* ============================================
+   MOBILE MENU STYLES
+   ============================================ */
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    /* Transform hamburger to X when active */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: linear-gradient(135deg, var(--deep-blue) 0%, var(--bronze) 100%);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.3s ease;
+        gap: 1.5rem;
+        box-shadow: -5px 0 15px var(--shadow-lg);
+        padding: 2rem 0;
+    }
+    
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-menu a {
+        display: block;
+        font-size: 1.1rem;
+        padding: 1rem 2rem;
+        margin: 0 1rem;
+        border: 2px solid rgba(255,255,255,0.2);
+        border-radius: 10px;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-menu a:hover {
+        background: var(--gold);
+        color: var(--deep-blue);
+        transform: translateX(-10px);
+        border-color: var(--gold);
+    }
 }
 
+/* Add space for fixed header */
+header {
+    margin-top: 80px;
+}
+
+.main-content {
+    padding-top: 2rem;
+}
 /* ============================================
    BANNER STYLING - CINEMATIC ANIMATIONS
    ============================================ */
